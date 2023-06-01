@@ -1,0 +1,4 @@
+pft/
+*/*.o
+*.a
+ft_printf
