@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   handle_char.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abe21453@cs.saisoncard.co.jp <abe21453@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 16:01:19 by abe21453@cs       #+#    #+#             */
-/*   Updated: 2023/06/02 20:02:49 by abe21453@cs      ###   ########.fr       */
+/*   Created: 2023/06/02 16:27:14 by abe21453@cs       #+#    #+#             */
+/*   Updated: 2023/06/02 19:49:00 by abe21453@cs      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdarg.h>
-#include <stddef.h>
+#include "ft_printf.h"
+#include "libft.h"
+#include <stdio.h>
 
-int		ft_printf(const char *format, ...);
-void	handle_char(size_t *i, va_list args);
+void	handle_char(size_t *i, va_list args)
+{
+	char c;
 
-#endif
+	c = va_arg(args, int);
+	printf("\nc: %c\n", c);
+	ft_putchar_fd(c, 1);
+	(*i)++;
+}

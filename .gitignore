@@ -1,4 +1,6 @@
 pft/
 */*.o
 *.a
-ft_printf
+ft_printfpft_2019/
+pft/
+pft_2019/
