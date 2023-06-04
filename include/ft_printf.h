@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abe21453@cs.saisoncard.co.jp <abe21453@    +#+  +:+       +#+        */
+/*   By: abeyuuta <abeyuuta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 16:01:19 by abe21453@cs       #+#    #+#             */
-/*   Updated: 2023/06/02 20:02:49 by abe21453@cs      ###   ########.fr       */
+/*   Updated: 2023/06/04 17:57:32 by abeyuuta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # include <stdarg.h>
-#include <stddef.h>
+# include <stddef.h>
 
 int		ft_printf(const char *format, ...);
-void	handle_char(size_t *i, va_list args);
+size_t	handle_char(va_list *args);
+size_t	handle_string(va_list *args);
+size_t	hanlde_pointer(va_list *arg);
 
 #endif
