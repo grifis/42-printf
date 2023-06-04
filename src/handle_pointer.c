@@ -6,28 +6,57 @@
 /*   By: abeyuuta <abeyuuta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 17:39:02 by abeyuuta          #+#    #+#             */
-/*   Updated: 2023/06/04 23:29:47 by abeyuuta         ###   ########.fr       */
+/*   Updated: 2023/06/05 00:27:31 by abeyuuta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-unsigned long long	dec_to_hex(unsigned long long n)
+int	count_digits(unsigned long long dec_num)
 {
-	unsigned long long	remainder;
-	unsigned long long	hex;
+	int	count;
 
-	hex = 0;
-	remainder = 0;
-	while (n != 0)
+	count = 0;
+	while (dec_num != 0)
 	{
-		remainder = n % 16;
-		n /= 16;
-		hex = hex * 10 + remainder;
+		count++;
+		dec_num = dec_num / 16;
 	}
-	return (hex);
+	return (count);
 }
+
+char	*dec_to_hex(unsigned long long dec_num)
+{
+	int		digits;
+	char	*hex_num;
+	int		i;
+	int		temp;
+
+	digits = countDigits(dec_num);
+	i = 0;
+	hex_num = malloc((digits + 1) * sizeof(char));
+	if (hex_num == NULL)
+		return (NULL);
+	while (dec_num != 0)
+	{
+		temp = dec_num % 16;
+		if (temp < 10)
+			temp = temp + '0';
+		else
+			temp = temp + 55;
+		hex_num[i] = (char)temp;
+		i++;
+		dec_num = dec_num / 16;
+	}
+	hex_num[i] = '\0';
+	return (hex_num);
+}
+12345 / 16  = 771
+771 / 16 = 48
+48 / 16 = 3
+3 / 16 = 0
+
 
 size_t	hanlde_pointer(va_list *arg)
 {
