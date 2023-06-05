@@ -3,6 +3,7 @@ pft/
 *.a
 libft/*.o
 libft/*.a
+ft_printf
 ft_printfpft_2019/
 pft/
 pft_2019/
