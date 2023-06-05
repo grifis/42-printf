@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abeyuuta <abeyuuta@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abe21453@cs.saisoncard.co.jp <abe21453@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 14:40:47 by abe21453@cs       #+#    #+#             */
-/*   Updated: 2023/06/04 17:57:20 by abeyuuta         ###   ########.fr       */
+/*   Updated: 2023/06/05 16:14:50 by abe21453@cs      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ size_t	check(const char str, va_list *args)
 		return (handle_string(args));
 	else if (str == 'p')
 		return (handle_pointer(args));
+	else if (str == 'd' || str == 'i')
+		return (handle_integer(args));
+	else if (str == 'u')
+		return (handle_unsigned(args));
 	return (0);
 }
 
@@ -54,6 +58,11 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	ft_printf("abc%cef%s\n", 'd', "hello");
+	ft_printf("char: %c\n", 'c');
+	ft_printf("string: %s\n", "string");
+	ft_printf("pointer: %p\n", "pointer");
+	ft_printf("integer(d): %d\n", 2147483647);
+	ft_printf("integer(i): %i\n", -2147483648);
+	ft_printf("unsigned: %u\n", 4294967295);
 	return (0);
 }

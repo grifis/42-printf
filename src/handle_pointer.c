@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   handle_pointer.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abeyuuta <abeyuuta@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abe21453@cs.saisoncard.co.jp <abe21453@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 17:39:02 by abeyuuta          #+#    #+#             */
-/*   Updated: 2023/06/05 00:27:31 by abeyuuta         ###   ########.fr       */
+/*   Updated: 2023/06/05 11:40:09 by abe21453@cs      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-int	count_digits(unsigned long long dec_num)
+size_t	count_hex_digits(unsigned long long dec_num)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
 	while (dec_num != 0)
@@ -26,47 +26,43 @@ int	count_digits(unsigned long long dec_num)
 	return (count);
 }
 
-char	*dec_to_hex(unsigned long long dec_num)
+char	*dec_to_hex(unsigned long long dec_num, size_t digits)
 {
-	int		digits;
 	char	*hex_num;
-	int		i;
 	int		temp;
 
-	digits = countDigits(dec_num);
-	i = 0;
 	hex_num = malloc((digits + 1) * sizeof(char));
 	if (hex_num == NULL)
 		return (NULL);
-	while (dec_num != 0)
+	hex_num[digits] = '\0';
+	while (digits--)
 	{
 		temp = dec_num % 16;
 		if (temp < 10)
 			temp = temp + '0';
 		else
 			temp = temp + 55;
-		hex_num[i] = (char)temp;
-		i++;
+		hex_num[digits] = (char)temp;
 		dec_num = dec_num / 16;
 	}
-	hex_num[i] = '\0';
 	return (hex_num);
 }
-12345 / 16  = 771
-771 / 16 = 48
-48 / 16 = 3
-3 / 16 = 0
 
-
-size_t	hanlde_pointer(va_list *arg)
+size_t	handle_pointer(va_list *args)
 {
 	void	*ptr;
 	size_t	count;
+	size_t	digits;
+	char	*hex_ptr;
 
 	count = 0;
-	ptr = va_arg(*arg, void *);
+	ptr = va_arg(*args, void *);
 	ft_putstr_fd("0x", 1);
 	count += 2;
-	count += ft_putnbr_base((unsigned long long)ptr, "0123456789abcdef");
+	digits = count_hex_digits((unsigned long long)ptr);
+	count += digits;
+	hex_ptr = dec_to_hex((unsigned long long)ptr, digits);
+	ft_putstr_fd(hex_ptr, 1);
+	free(hex_ptr);
 	return (count);
 }
