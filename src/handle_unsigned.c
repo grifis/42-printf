@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_unsigned.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abe21453@cs.saisoncard.co.jp <abe21453@    +#+  +:+       +#+        */
+/*   By: abeyuuta <abeyuuta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 11:24:37 by abe21453@cs       #+#    #+#             */
-/*   Updated: 2023/06/05 11:31:39 by abe21453@cs      ###   ########.fr       */
+/*   Updated: 2023/06/06 00:46:34 by abeyuuta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 size_t	handle_unsigned(va_list *args)
 {
-	unsigned int num;
+	unsigned int	num;
 
 	num = va_arg(*args, unsigned int);
 	ft_put_unsigned_fd(num, 1);
-	return (count_digits(num));
+	return (count_digit(num));
 }

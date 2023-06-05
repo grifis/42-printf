@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abe21453@cs.saisoncard.co.jp <abe21453@    +#+  +:+       +#+        */
+/*   By: abeyuuta <abeyuuta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 14:40:47 by abe21453@cs       #+#    #+#             */
-/*   Updated: 2023/06/05 16:14:50 by abe21453@cs      ###   ########.fr       */
+/*   Updated: 2023/06/06 00:43:14 by abeyuuta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ int	main(void)
 	ft_printf("integer(d): %d\n", 2147483647);
 	ft_printf("integer(i): %i\n", -2147483648);
 	ft_printf("unsigned: %u\n", 4294967295);
+	printf("hex: %x\n", 100);
 	return (0);
 }
