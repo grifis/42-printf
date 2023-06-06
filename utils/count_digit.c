@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   count_digit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abeyuuta <abeyuuta@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abe21453@cs.saisoncard.co.jp <abe21453@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 00:46:51 by abeyuuta          #+#    #+#             */
-/*   Updated: 2023/06/06 00:46:52 by abeyuuta         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:33:32 by abe21453@cs      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@ int	count_digit(int num)
 {
 	int	count;
 
+	if (num == 0)
+		return (1);
 	count = 0;
 	while (num != 0)
 	{

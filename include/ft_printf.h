@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abeyuuta <abeyuuta@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abe21453@cs.saisoncard.co.jp <abe21453@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 16:01:19 by abe21453@cs       #+#    #+#             */
-/*   Updated: 2023/06/06 00:51:42 by abeyuuta         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:36:29 by abe21453@cs      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ size_t	handle_string(va_list *args);
 size_t	handle_pointer(va_list *args);
 size_t	handle_integer(va_list *args);
 int		count_digit(int num);
+int		count_unsigned_digit(unsigned long long num);
 size_t	handle_unsigned(va_list *args);
 void	ft_put_unsigned_fd(unsigned int n, int fd);
 char	*dec_to_hex(unsigned long long dec_num, size_t digits);
+size_t	handle_hex(va_list *args);
 
 #endif

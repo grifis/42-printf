@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   dec_to_hex.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abeyuuta <abeyuuta@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abe21453@cs.saisoncard.co.jp <abe21453@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 00:51:25 by abeyuuta          #+#    #+#             */
-/*   Updated: 2023/06/06 00:53:44 by abeyuuta         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:46:00 by abe21453@cs      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*dec_to_hex(unsigned long long dec_num, size_t digits)
 {

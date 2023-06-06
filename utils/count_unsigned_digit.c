@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_hex.c                                       :+:      :+:    :+:   */
+/*   count_unsigned_digit.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abe21453@cs.saisoncard.co.jp <abe21453@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 11:26:56 by abe21453@cs       #+#    #+#             */
-/*   Updated: 2023/06/06 19:30:46 by abe21453@cs      ###   ########.fr       */
+/*   Created: 2023/06/06 00:46:51 by abeyuuta          #+#    #+#             */
+/*   Updated: 2023/06/06 16:34:29 by abe21453@cs      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "libft.h"
-#include <stdio.h>
-
-size_t	handle_hex(va_list *args)
+int	count_unsigned_digit(unsigned long long num)
 {
-	int num;
-	char *hex;
+	int	count;
 
-	num = va_arg(*args, int);
-	hex = dec_to_hex(num, count_unsigned_digit((unsigned int)num));
-	printf("count_unsigned_digit: %d\n", count_unsigned_digit((unsigned int)num));
-	printf("unsigned_num: %u\n", (unsigned int)num);
-	ft_putstr_fd(hex, 1);
-	return (ft_strlen(hex));
+	if (num == 0)
+		return (1);
+	count = 0;
+	while (num != 0)
+	{
+		count++;
+		num = num / 10;
+	}
+	return (count);
 }
