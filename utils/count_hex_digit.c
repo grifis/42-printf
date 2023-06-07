@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_hex.c                                       :+:      :+:    :+:   */
+/*   count_hex_digit.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abe21453@cs.saisoncard.co.jp <abe21453@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 11:26:56 by abe21453@cs       #+#    #+#             */
-/*   Updated: 2023/06/07 16:48:41 by abe21453@cs      ###   ########.fr       */
+/*   Created: 2023/06/06 00:46:51 by abeyuuta          #+#    #+#             */
+/*   Updated: 2023/06/07 16:19:18 by abe21453@cs      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "libft.h"
-#include <stdio.h>
-
-size_t	handle_hex(va_list *args, char format)
+int	count_hex_digit(unsigned int num)
 {
-	int num;
-	char *hex;
+	int	count;
 
-	num = va_arg(*args, int);
-	hex = dec_to_hex(num, count_hex_digit((unsigned int)num));
-
-	if (format == 'x')
-		ft_putstr_fd(hex, 1);
-	else
-		ft_putstr_fd(ft_str_toupper(hex), 1);
-	if (hex)
-		free(hex);
-	return (ft_strlen(hex));
+	if (num == 0)
+		return (1);
+	count = 0;
+	while (num != 0)
+	{
+		count++;
+		num = num / 16;
+	}
+	return (count);
 }

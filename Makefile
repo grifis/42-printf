@@ -1,7 +1,7 @@
 NAME = libftprintf.a
 SRCS = src/ft_printf.c src/handle_char.c src/handle_string.c src/handle_pointer.c src/handle_integer.c\
 		utils/count_digit.c src/handle_unsigned.c utils/ft_put_unsigned_fd.c utils/dec_to_hex.c\
-		src/handle_hex.c utils/count_unsigned_digit.c
+		src/handle_hex.c utils/count_unsigned_digit.c utils/count_hex_digit.c utils/ft_str_toupper.c
 OBJS = $(SRCS:%.c=%.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
