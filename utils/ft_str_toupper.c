@@ -6,7 +6,7 @@
 /*   By: abe21453@cs.saisoncard.co.jp <abe21453@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:47:12 by abe21453@cs       #+#    #+#             */
-/*   Updated: 2023/06/07 16:47:31 by abe21453@cs      ###   ########.fr       */
+/*   Updated: 2023/06/09 10:36:04 by abe21453@cs      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 char	*ft_str_toupper(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i])
-    {
-        str[i] = ft_toupper(str[i]);
-        i++;
-    }
-    return (str);
+	i = 0;
+	while (str[i])
+	{
+		str[i] = ft_toupper(str[i]);
+		i++;
+	}
+	return (str);
 }
