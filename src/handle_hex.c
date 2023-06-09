@@ -6,7 +6,7 @@
 /*   By: abe21453@cs.saisoncard.co.jp <abe21453@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 11:26:56 by abe21453@cs       #+#    #+#             */
-/*   Updated: 2023/06/07 16:48:41 by abe21453@cs      ###   ########.fr       */
+/*   Updated: 2023/06/09 01:35:30 by abe21453@cs      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ size_t	handle_hex(va_list *args, char format)
 {
 	int num;
 	char *hex;
+	size_t hex_len;
 
 	num = va_arg(*args, int);
 	hex = dec_to_hex(num, count_hex_digit((unsigned int)num));
+	hex_len = ft_strlen(hex);
 
 	if (format == 'x')
 		ft_putstr_fd(hex, 1);
@@ -28,5 +30,5 @@ size_t	handle_hex(va_list *args, char format)
 		ft_putstr_fd(ft_str_toupper(hex), 1);
 	if (hex)
 		free(hex);
-	return (ft_strlen(hex));
+	return (hex_len);
 }

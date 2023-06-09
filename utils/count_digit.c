@@ -6,11 +6,11 @@
 /*   By: abe21453@cs.saisoncard.co.jp <abe21453@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 00:46:51 by abeyuuta          #+#    #+#             */
-/*   Updated: 2023/06/06 16:33:32 by abe21453@cs      ###   ########.fr       */
+/*   Updated: 2023/06/09 01:39:00 by abe21453@cs      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	count_digit(int num)
+int	count_digit(long long num)
 {
 	int	count;
 

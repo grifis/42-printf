@@ -1,7 +1,8 @@
 {
   "files.associations": {
     "cstdarg": "c",
-    "sstream": "c"
+    "sstream": "c",
+    "limits": "c"
   },
   "cSpell.words": ["hanlde", "libft", "putnbr", "putstr"]
 }
